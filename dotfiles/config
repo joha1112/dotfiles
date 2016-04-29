@@ -257,21 +257,24 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-set $bg-color 			#2f343f
-set $inactive-bg-color		#1a1b26
-set $text-color			#f3f4f5
-set $inactive-text-color	#ffffff
-set $urgent-bg-color		#3c2f2f
-set $indic			#be9b7b
+set $bg-color 			#4B675A
+set $inactive-bg-color		#4B675A
+set $text-color			#314766
+set $inactive-text-color	#393B3A
+set $urgent-bg-color		#FF0000
+set $urgent-text-color		#FF0000
+set $indic			#674B58
+set $termbord			#4B675A
+
 #exec compton
 bindsym $mod+d exec rofi -show run
 
 # window colors
 #                       border              	background         text                 indicator
-client.focused          $inactive-bg-color      $bg-color          $text-color          $indic
-client.unfocused        $bg-color 		$inactive-bg-color $inactive-text-color $indic
-client.focused_inactive $bg-color 		$inactive-bg-color $inactive-text-color $indic
-client.urgent           $urgent-bg-color    	$urgent-bg-color   $text-color          $indic
+client.focused          $inactive-text-color	$bg-color	   $text-color		$indic
+client.unfocused        $text-color		$inactive-bg-color $inactive-text-color	$indic
+client.focused_inactive $text-color		$inactive-bg-color $inactive-text-color	$indic
+client.urgent          	$text-color		$urgent-bg-color   $text-color		$indic
 
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
@@ -284,13 +287,13 @@ bar {
 	font pango:System San Francisco Display,Icons 9
 	colors {
 		separator #757575
-		background $inactive-bg-color
+		background $bg-color
 		statusline #DDDDDD
 		#colors			border			backg			text
-		focused_workspace 	$777777 		$777777	 		$000
-		active_workspace 	$inactive-bg-color 	$inactive-bg-color 	#FFFFFF
-		inactive_workspace 	$inactive-bg-color 	$inactive-bg-color 	$inactive-text-color
-		urgent_workspace 	$urgent-bg-color 	$urgent-bg-color 	$urgent-bg-color
+		focused_workspace 	$termbord		$bg-color		$text-color
+		active_workspace 	$termbord 	 	$bg-color		$text-color
+		inactive_workspace 	$termbord	 	$inactive-bg-color 	$inactive-text-color
+		urgent_workspace 	$termbord	 	$urgent-bg-color 	$urgent-bg-color
 	}
 	tray_padding 2
 	position top
@@ -324,7 +327,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 #for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 8
 gaps outer 10
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
