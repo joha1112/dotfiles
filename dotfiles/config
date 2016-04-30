@@ -258,11 +258,11 @@ mode "resize" {
 }
 
 set $bg-color 			#4B675A
-set $inactive-bg-color		#4B675A
-set $text-color			#314766
-set $inactive-text-color	#393B3A
-set $urgent-bg-color		#FF0000
-set $urgent-text-color		#FF0000
+set $inactive-bg-color		#675a4b
+set $text-color			#ffe39f
+set $inactive-text-color	#d4ffea
+set $urgent-bg-color		#674b58
+set $urgent-text-color		#674b58
 set $indic			#674B58
 set $termbord			#4B675A
 
@@ -292,7 +292,7 @@ bar {
 		#colors			border			backg			text
 		focused_workspace 	$termbord		$bg-color		$text-color
 		active_workspace 	$termbord 	 	$bg-color		$text-color
-		inactive_workspace 	$termbord	 	$inactive-bg-color 	$inactive-text-color
+		inactive_workspace 	$termbord	 	$bg-color 	$inactive-text-color
 		urgent_workspace 	$termbord	 	$urgent-bg-color 	$urgent-bg-color
 	}
 	tray_padding 2
